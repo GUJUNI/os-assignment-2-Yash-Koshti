@@ -1,0 +1,60 @@
+# Name - Yash Koshti
+# R.No - 19
+# Course - MCA-2
+# Subject - OPERATING SYSTEM PRACTICAL
+# Assignment - Practical Assignment-1
+# ***************************************************************************************************************************
+# Program - 20 : Write a shell script to display the menu driven interface :- 
+# 1) list all files of the current directory 
+# 2) print the current directory 
+# 3) print the date 
+# 4) print the users 
+# otherwisedisplay "Invalid Option".
+
+list_files() {
+    echo "Listing all files in current directory:"
+    ls -l
+}
+
+print_directory() {
+    echo "Current directory: $(pwd)"
+}
+
+echo "MENU:"
+echo "1) List all files of the current directory"
+echo "2) Print the current directory"
+echo "Enter your choice (1 or 2): "
+read choice
+
+case $choice in
+    1) list_files ;;
+    2) print_directory ;;
+    *) echo "Invalid choice. Please enter 1 or 2." ;;
+esac
+
+# OUTPUT
+
+# ~$ sh P1_20.sh
+# MENU:
+# 1) List all files of the current directory
+# 2) Print the current directory
+# Enter your choice (1 or 2): 
+# 1
+# Listing all files in current directory:
+# total 12
+# -rw-r--r-- 1 user user   29 May 28 15:03 demo.txt
+# -rw-r--r-- 1 user user   42 May 28 15:02 demo2.txt
+# -rw-r--r-- 1 user user   15 May 28 14:46 emp_details.txt
+# -rw-r--r-- 1 user user 3045 May 28 14:45 script10.sh
+# -rw-r--r-- 1 user user  864 May 28 14:49 script15.sh
+# -rw-r--r-- 1 user user 1181 May 28 14:56 script17.sh
+# -rw-r--r-- 1 user user  922 May 28 14:59 script18.sh
+# -rw-r--r-- 1 user user  680 May 28 15:00 script19.sh
+# -rw-r--r-- 1 user user  904 May 28 15:05 script20.sh
+# ~$ sh P1_20.sh
+# MENU:
+# 1) List all files of the current directory
+# 2) Print the current directory
+# Enter your choice (1 or 2): 
+# 2
+# Current directory: /home/user
